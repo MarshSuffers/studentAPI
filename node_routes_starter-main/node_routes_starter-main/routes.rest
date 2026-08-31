@@ -1,0 +1,5 @@
+## get ttech route
+get http://localhost:3000/HTTP/1.1
+
+## get root path
+get http://localhost:3000/HTTP/1.1

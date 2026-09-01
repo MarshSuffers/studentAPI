@@ -11,12 +11,15 @@ const initDB = (callback) => {
 	}
 	MongoClient.connect(process.env.MONGODB_URI)
 		.then((client) => {
-			_db = clientcallback(null, _db);
+			_db = client;
+			callback(null, _db);
 		})
 		.catch((err) => {
+			console.log("Something went wrong with the DB!");
 			callback(err);
 		});
 };
+
 const getDB = () => {
 	if (!_db) {
 		throw Error("DB not init");

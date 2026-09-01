@@ -1,5 +1,8 @@
 ## get ttech route
-get http://localhost:3000/HTTP/1.1
+get http://localhost:3000/ttech HTTP/1.1
 
 ## get root path
-get http://localhost:3000/HTTP/1.1
+get http://localhost:3000/ HTTP/1.1
+
+## get all students
+get http://localhost:3000/students HTTP/1.1

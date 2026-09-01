@@ -38,3 +38,36 @@ Content-Type: application/json
 
 ### delete student
 DELETE http://localhost:3000/students/6a970385d94c45989eaac146 HTTP/1.1
+
+
+### post register
+POST http://localhost:3000/auth/register HTTP/1.1
+Content-Type: application/json
+
+{
+  "fullName": "test",
+  "email": "test@gmail.com",
+  "password": "test",
+  "userType": "reg"
+}
+
+
+### post login
+POST http://localhost:3000/auth/login HTTP/1.1
+Content-Type: application/json
+
+{
+  "fullName": "test",
+  "email": "test@gmail.com",
+  "password": "test",
+  "userType": "reg"
+}
+
+
+### post logout
+POST http://localhost:3000/auth/logout HTTP/1.1
+
+
+### protected route
+GET http://localhost:3000/auth/protected HTTP/1.1
+Authorization: Bearer

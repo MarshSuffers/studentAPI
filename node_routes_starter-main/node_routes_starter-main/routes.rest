@@ -1,8 +1,40 @@
-## get ttech route
-get http://localhost:3000/ttech HTTP/1.1
+### get root path
+GET  http://localhost:3000/ HTTP/1.1
 
-## get root path
-get http://localhost:3000/ HTTP/1.1
 
-## get all students
-get http://localhost:3000/students HTTP/1.1
+### get ttech route
+GET  http://localhost:3000/ttech HTTP/1.1
+
+
+### get all students
+GET  http://localhost:3000/students HTTP/1.1
+
+
+### get one student
+GET http://localhost:3000/students/6a9624ce47475af207c98602 HTTP/1.1
+
+
+### create a student
+POST http://localhost:3000/students HTTP/1.1
+Content-Type: application/json
+
+{
+  "firstName": "Carlos",
+  "lastName": "Hernandez",
+  "email": "Carlos@gmail.com",
+  "age": "24",
+  "currentCollege": "Cooleg"
+}
+
+
+### update student
+PATCH   http://localhost:3000/students/6a96256647475af207c98603 HTTP/1.1
+Content-Type: application/json
+
+{
+  "lastName": "Deer"
+}
+
+
+### delete student
+DELETE  http://localhost:3000/students/6a970385d94c45989eaac146 HTTP/1.1

@@ -1,17 +1,21 @@
 const mongodb = require("../db/connect");
 const ObjectId = require("mongodb").ObjectId;
 
-const awesomeFunction = (req, res, next) => {
+const awesomeFunction = (req, res) => {
 	res.send("Hello World!");
 };
 
-const tooeleTech = (req, res, next) => {
+const tooeleTech = (req, res) => {
 	res.send("Tooele Tech is Awesome!");
 };
 
-const getAllStudents = async (req, res) => {
+const getAllStudents = async (req, res, next) => {
 	try {
-		const result = await mongodb.getDB().db().collection("studentAPI").find;
+		const result = await mongodb
+			.getDB("studentAPI")
+			.db("studentAPI")
+			.collection("studentAPI")
+			.find();
 		result.toArray().then((lists) => {
 			res.setHeader("Content-Type", "applications/json");
 			res.status(200).json(lists);
@@ -25,9 +29,9 @@ const getSingleStudent = async (req, res) => {
 	try {
 		const userId = new ObjectId(req.params.id);
 		const result = await mongodb
-			.getDb()
-			.db()
-			.collection("students")
+			.getDB("studentAPI")
+			.db("studentAPI")
+			.collection("studentAPI")
 			.find({ _id: userId });
 		result.toArray().then((lists) => {
 			res.setHeader("Content-Type", "application/json");
@@ -49,9 +53,9 @@ const createStudent = async (req, res) => {
 		};
 
 		const response = await mongodb
-			.getDb()
-			.db()
-			.collection("students")
+			.getDB("studentAPI")
+			.db("studentAPI")
+			.collection("studentAPI")
 			.insertOne(student);
 		if (response.acknowledged) {
 			res.status(201).json(response);
@@ -78,9 +82,9 @@ const updateStudent = async (req, res) => {
 			currentCollege: req.body.currentCollege,
 		};
 		const response = await mongodb
-			.getDb()
-			.db()
-			.collection("students")
+			.getDB("studentAPI")
+			.db("studentAPI")
+			.collection("studentAPI")
 			.replaceOne({ _id: userId }, student);
 		if (response.acknowledged) {
 			res.status(204).json(response);
@@ -100,9 +104,9 @@ const deleteStudent = async (req, res) => {
 	try {
 		const userId = new ObjectId(req.params.id);
 		const response = await mongodb
-			.getDb()
-			.db()
-			.collection("students")
+			.getDB("studentAPI")
+			.db("studentAPI")
+			.collection("studentAPI")
 			.deleteOne({ _id: userId }, true);
 		console.log(response);
 		if (response.acknowledged) {
@@ -118,9 +122,13 @@ const deleteStudent = async (req, res) => {
 		res.status(500).json(error);
 	}
 };
+
 module.exports = {
 	awesomeFunction,
 	tooeleTech,
 	getAllStudents,
 	getSingleStudent,
+	createStudent,
+	updateStudent,
+	deleteStudent,
 };

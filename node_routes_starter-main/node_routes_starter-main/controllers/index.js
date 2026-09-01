@@ -86,7 +86,7 @@ const updateStudent = async (req, res) => {
 			.getDB("studentAPI")
 			.db("studentAPI")
 			.collection("studentAPI")
-			.replaceOne({ _id: userId }, student);
+			.updateOne({ _id: userId }, student);
 		if (response.acknowledged) {
 			res.status(204).json(response);
 		} else {

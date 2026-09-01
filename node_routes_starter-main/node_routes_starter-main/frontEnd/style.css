@@ -1,0 +1,215 @@
+* {
+	box-sizing: border-box;
+}
+
+body {
+	margin: 0;
+
+	font-family: Arial, Helvetica, sans-serif;
+
+	background: black;
+	color: black;
+}
+
+.container {
+	width: 90%;
+	max-width: 1000px;
+
+	margin: 40px auto;
+}
+
+/* Header */
+
+header {
+	text-align: center;
+	margin-bottom: 30px;
+}
+
+header h1 {
+	margin-bottom: 8px;
+	font-size: 36px;
+	color: white;
+}
+
+header p {
+	color: grey;
+}
+
+/* Cards */
+
+.card {
+	background: white;
+
+	padding: 25px;
+
+	margin-bottom: 25px;
+
+	border-radius: 12px;
+
+	border-color: black;
+
+	box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+}
+
+/* Form */
+
+.form-row {
+	display: flex;
+	gap: 20px;
+}
+
+.form-group {
+	display: flex;
+	flex-direction: column;
+
+	gap: 6px;
+
+	flex: 1;
+
+	margin-bottom: 18px;
+}
+
+label {
+	font-weight: bold;
+}
+
+input[type="text"] {
+	padding: 12px;
+
+	font-size: 16px;
+
+	border: 1px solid grey;
+
+	border-radius: 6px;
+}
+
+input[type="text"]:focus {
+	outline: none;
+
+	border-color: grey;
+}
+
+/* Color Preview */
+.color-preview {
+	width: 100%;
+	height: 45px;
+	background-color: orange;
+	border: 1px solid grey;
+	border-radius: 6px;
+}
+
+/* Buttons */
+
+button {
+	padding: 11px 18px;
+
+	border: none;
+
+	border-radius: 6px;
+
+	background: grey;
+
+	color: white;
+
+	font-size: 15px;
+
+	cursor: pointer;
+}
+
+button:hover {
+	background: darkgray;
+}
+
+/* Palette Header */
+
+.section-header {
+	display: flex;
+
+	justify-content: space-between;
+
+	align-items: center;
+
+	margin-bottom: 20px;
+}
+
+.section-header h2 {
+	margin-bottom: 4px;
+}
+
+.section-header p {
+	margin-top: 0;
+
+	color: darkgray;
+}
+
+/* Color Grid */
+
+#colorList {
+	display: grid;
+
+	grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+
+	gap: 20px;
+}
+
+.color-card {
+	overflow: hidden;
+
+	border-radius: 10px;
+
+	border: 1px solid grey;
+
+	background: white;
+}
+
+.color-display {
+	height: 160px;
+
+	display: flex;
+
+	align-items: flex-end;
+
+	padding: 15px;
+
+	color: white;
+
+	font-weight: bold;
+
+	text-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
+}
+
+.color-info {
+	padding: 15px;
+}
+
+.color-name {
+	margin: 0 0 6px 0;
+
+	font-size: 18px;
+}
+
+.hex-code {
+	margin: 0;
+
+	font-family: monospace;
+
+	color: grey;
+
+	font-size: 15px;
+}
+
+.color-actions {
+	display: flex;
+
+	gap: 8px;
+
+	margin-top: 12px;
+}
+
+.edit-button {
+	background: lightblue;
+}
+
+.delete-button {
+	background: lightcoral;
+}

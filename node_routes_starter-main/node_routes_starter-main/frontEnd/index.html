@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+		<title>Color Palette</title>
+
+		<link rel="stylesheet" href="style.css" />
+	</head>
+
+	<body>
+		<main class="container">
+			<header>
+				<h1>Color Palette</h1>
+				<p>Make a color palette.</p>
+			</header>
+
+			<!-- Add Color Form -->
+
+			<section class="card">
+				<h2>Add Color</h2>
+
+				<form id="colorForm">
+					<div class="form-group">
+						<label for="colorName"> Color Name </label>
+
+						<input
+							type="text"
+							id="colorName"
+							placeholder="Example: Orange"
+							required
+						/>
+					</div>
+
+					<div class="form-row">
+						<div class="form-group">
+							<label for="hexCode"> Hex Code </label>
+
+							<input
+								type="text"
+								id="hexCode"
+								placeholder="#FF5733"
+								maxlength="7"
+								required
+							/>
+						</div>
+
+						<div class="form-group">
+							<label> Color Preview </label>
+							<div id="colorPreview" class="color-preview"></div>
+						</div>
+					</div>
+
+					<button type="submit">Add Color</button>
+				</form>
+			</section>
+
+			<!-- Palette -->
+
+			<section class="card">
+				<div class="section-header">
+					<div>
+						<h2>Palette</h2>
+						<p id="colorCount">0 colors</p>
+					</div>
+
+					<button type="button" id="refreshButton">Refresh</button>
+				</div>
+
+				<div id="colorList">
+					<p>Loading colors...</p>
+				</div>
+			</section>
+		</main>
+
+		<script src="app.js"></script>
+	</body>
+</html>

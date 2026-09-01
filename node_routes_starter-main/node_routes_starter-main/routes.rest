@@ -6,6 +6,38 @@ GET  http://localhost:3000/ HTTP/1.1
 GET  http://localhost:3000/ttech HTTP/1.1
 
 
+### get all colors
+GET  http://localhost:3000/colors HTTP/1.1
+
+
+### get one color
+GET http://localhost:3000/colors/ HTTP/1.1
+
+
+### create a color
+POST http://localhost:3000/colors HTTP/1.1
+Content-Type: application/json
+
+{
+  "hexCode": "#ababab",
+  "name": "Color1"
+}
+
+
+### update color
+PATCH   http://localhost:3000/colors/ HTTP/1.1
+Content-Type: application/json
+
+{
+  "hexCode": "#123456"
+  "name": "Color2"
+}
+
+
+### delete color
+DELETE http://localhost:3000/colors/6a970385d94c45989eaac146 HTTP/1.1
+
+
 ### get all students
 GET  http://localhost:3000/students HTTP/1.1
 

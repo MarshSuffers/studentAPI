@@ -81,6 +81,7 @@ const updateStudent = async (req, res) => {
 			age: req.body.age,
 			currentCollege: req.body.currentCollege,
 		};
+
 		const response = await mongodb
 			.getDB("studentAPI")
 			.db("studentAPI")

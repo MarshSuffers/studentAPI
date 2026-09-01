@@ -1,9 +1,5 @@
 const API_URL = "http://localhost:3000";
 
-// ----------------------------------------
-// GET ELEMENTS
-// ----------------------------------------
-
 const colorForm = document.getElementById("colorForm");
 
 const colorList = document.getElementById("colorList");
@@ -17,11 +13,6 @@ const colorName = document.getElementById("colorName");
 const hexCode = document.getElementById("hexCode");
 
 const colorPreview = document.getElementById("colorPreview");
-
-// ----------------------------------------
-// GET ALL COLORS
-// GET /colors
-// ----------------------------------------
 
 async function getColors() {
 	try {
@@ -45,10 +36,6 @@ async function getColors() {
         `;
 	}
 }
-
-// ----------------------------------------
-// DISPLAY COLORS
-// ----------------------------------------
 
 function displayColors(colors) {
 	colorList.innerHTML = "";
@@ -122,11 +109,6 @@ function displayColors(colors) {
 	});
 }
 
-// ----------------------------------------
-// ADD COLOR
-// POST /colors
-// ----------------------------------------
-
 colorForm.addEventListener("submit", async (event) => {
 	event.preventDefault();
 
@@ -173,10 +155,6 @@ colorForm.addEventListener("submit", async (event) => {
 	}
 });
 
-// ----------------------------------------
-// HEX VALIDATION
-// ----------------------------------------
-
 function isValidHex(hex) {
 	return /^#[0-9A-Fa-f]{6}$/.test(hex);
 }
@@ -190,11 +168,6 @@ hexCode.addEventListener("input", () => {
 		colorPreview.style.backgroundColor = value;
 	}
 });
-
-// ----------------------------------------
-// EDIT COLOR
-// PATCH /colors/:id
-// ----------------------------------------
 
 async function editColor(id) {
 	const newName = prompt("Enter the new color name:");
@@ -244,11 +217,6 @@ async function editColor(id) {
 	}
 }
 
-// ----------------------------------------
-// DELETE COLOR
-// DELETE /colors/:id
-// ----------------------------------------
-
 async function deleteColor(id) {
 	const confirmed = confirm("Are you sure you want to delete this color?");
 
@@ -273,14 +241,6 @@ async function deleteColor(id) {
 	}
 }
 
-// ----------------------------------------
-// REFRESH
-// ----------------------------------------
-
 refreshButton.addEventListener("click", getColors);
-
-// ----------------------------------------
-// INITIAL LOAD
-// ----------------------------------------
 
 getColors();
